@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3
 # KUBEGET v.0.9.5. This program list the pods on the K8s cluster. 
 # Commandline options:
 # --node [nodename]       - show only the Pods from a given node

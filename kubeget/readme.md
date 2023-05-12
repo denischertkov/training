@@ -29,9 +29,21 @@ Solution
 
 The program is written in Python 3. No additional libraries are required. 
 
-The options can be used one at a time or combined. In case of both options will use (--namespace and --node), pods satisfying both conditions will be shown. With -h option, help is shown:
-```$ python3 kubeget.py -h
-KUBEGET v.0.9. This program list the pods on the K8s cluster. Run with -h option for help.
+The options can be used one at a time or combined. In case of both options will use (--namespace and --node), pods satisfying both conditions will be shown:
+```
+$ python3 kubeget.py --namespace monitoring --node i-05b861573467c4e05
+KUBEGET v.0.9.5. This program list the pods on the K8s cluster. Run with -h option for help.
+Denis Chertkov, denis@chertkov.info, 12/05/2023
+POD NAME                                         Number of Labels   Node Name                                        NAMESPACE
+=========                                        ================   ==========                                       ===========
+node-exporter-node-35whz                         12                 i-05b861573467c4e05                              monitoring-x
+prometheus-adapter-8b7c445d4c-n4kzm              7                  i-05b861573467c4e05                              monitoring-x
+dox-vmagent-kafkaapp-victoria-metrics-agent-5788 5                  i-05b861573467c4e05                              monitoring-x
+```
+With -h option, help is shown:
+```
+$ python3 kubeget.py -h
+KUBEGET v.0.9.5. This program list the pods on the K8s cluster. Run with -h option for help.
 Denis Chertkov, denis@chertkov.info, 12/05/2023
 usage: kubeget.py [-h] [-ns NAMESPACE] [-nn NODE]
 
