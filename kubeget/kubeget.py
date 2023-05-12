@@ -56,8 +56,8 @@ def showPods(namespace, nodename):
                      })
 
     # Show the pods
-    print('POD NAME                                         Number of Labels   Node Name                                   NAMESPACE')
-    print('=========                                        ================   ==========                                  ===========')
+    print('POD NAME                                         Number of Labels   Node Name                                        NAMESPACE')
+    print('=========                                        ================   ==========                                       ===========')
     
     # Do we need to list the current pod?
     for pod in pods:
