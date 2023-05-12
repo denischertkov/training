@@ -7,7 +7,7 @@ In any programming language you prefer, write a program that is able to list the
 --namespace <NAMESPACE> - will show the only Pods from the given namespace
 --node <NODE> - will show only the Pods from a given node
 ```
-For example: `kubeget –node some-node-name` will show the Pods only from the some-node-name
+For example: `kubeget --node some-node-name` will show the Pods only from the some-node-name
 The program should be able to run without any arguments, simply by executing ‘kubeget’
 The output, regardless of what argument is used, should look like this:
 
