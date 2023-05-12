@@ -1,1 +1,1 @@
-# training
+# This repository contains various training tasks.
