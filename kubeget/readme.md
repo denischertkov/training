@@ -45,4 +45,4 @@ The program uses the cubelet CLI. Before you start using the program, please che
 $ kubectl config current-context
 test12
 ```
-The program has a limit on the length of the name pods and nodes - no more than 48 characters. Sometimes it can be significant.
+The program has a limit on the length of the pod and node names - no more than 48 characters. Sometimes it can be significant.
