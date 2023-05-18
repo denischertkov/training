@@ -19,6 +19,7 @@ def createParser():
     parser.add_argument('-nn', '--node', type=str)
     return parser
 
+
 # Will check if kubectl tool is installed
 def kubectlIsInstalled():
     try:
@@ -27,6 +28,7 @@ def kubectlIsInstalled():
         return True
     except:
         return False
+
 
 # Will check if context is defined
 def contextIsDefined():
@@ -37,13 +39,15 @@ def contextIsDefined():
     except:
         return False
 
+
 def showPods(namespace, nodename):
     try:
         stdout_string = subprocess.check_output(
-            ['kubectl', 'get', 'pod', '--all-namespaces', '-o', 'json'], universal_newlines=True)
+            ['kubectl', 'get', 'pod', '--all-namespaces', '-o', 'json'],
+            universal_newlines=True)
     except:
         print('error: Can\'t get the pods from the cluster')
-        exit(1)
+        sys.exit(1)
     
     stdout_struct = json.loads(stdout_string)
 
@@ -52,8 +56,8 @@ def showPods(namespace, nodename):
     for pod in stdout_struct['items']:
         # Do we need to add the current pod to the list?
         list_pod = False
-        if namespace == None:                                                       # if namespace not defined
-            if nodename == None:                                                    # if namespace AND node not defined
+        if namespace is None:                                                       # if namespace not defined
+            if nodename is None:                                                    # if namespace AND node not defined
                 list_pod = True
             # if namespace defined AND node not defined
             else:
@@ -61,7 +65,7 @@ def showPods(namespace, nodename):
                     list_pod = True
         else:                                                                       # if namespace is defined
             # if namespace is defined AND node not defined
-            if nodename == None:
+            if nodename is None:
                 if namespace == pod['metadata']['namespace']:
                     list_pod = True
             # namespace is defined AND nodename also defined
@@ -78,7 +82,7 @@ def showPods(namespace, nodename):
     # Show the pods
     print('POD NAME                                         Number of Labels   Node Name                                        NAMESPACE')
     print('=========                                        ================   ==========                                       ===========')
-    
+
     # List the pods
     for pod in pods:
         out_line = '{0:49}{1:<19d}{2:49}{3:27}'.format(
@@ -87,20 +91,22 @@ def showPods(namespace, nodename):
     # print('=========                                        ================   ==========                                ===========')
     # print('POD NAME                                         Number of Labels   Node Name                                 NAMESPACE')
 
+
 if __name__ == '__main__':
 
     print("KUBEGET v.0.9.5. This program list the pods on the K8s cluster. Run with -h option for help.")
     print("Denis Chertkov, denis@chertkov.info, 12/05/2023")
 
     if not kubectlIsInstalled():
-        print('error: The kubectl CLI tool is not installed. Please istall it first.')
-        exit(1)
+        print('error: The   CLI tool is not installed. Please istall it first.')
+        sys.exit(1)
 
     if not contextIsDefined():
         print('error: Please set the current context first.')
-        exit(1)
+        sys.exit(1)
 
-    # Parse the commandline. If no parameters are specified, use the default values None
+    # Parse the commandline.
+    # If no parameters are specified, use the default values None
     parser = createParser()
     args = parser.parse_args(sys.argv[1:])
     namespace = args.namespace
@@ -109,4 +115,4 @@ if __name__ == '__main__':
     # Show selected pods
     showPods(namespace=namespace, nodename=nodename)
 
-    exit(0)
+    sys.exit(0)
