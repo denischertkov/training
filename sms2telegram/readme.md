@@ -3,6 +3,9 @@ Description
 
 This script can be used as a handler for [SMS Server Tools](http://smstools3.kekekasvi.com/) (smstools Linux package) for forwarding all incoming SMS to Telegram.
 
+I found a detailed description of the installation [here](https://medium.com/@MichaelMarner/sending-receiving-sms-on-linux-acf7610e2d2). Also can be helpful.
+
+
 Instructions
 ============
 Create the telegram bot according to the [Telegram Bot guide](https://core.telegram.org/bots#how-do-i-create-a-bot).
