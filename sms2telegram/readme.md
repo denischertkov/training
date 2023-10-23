@@ -8,6 +8,13 @@ I found a detailed description of the installation [here](https://medium.com/@Mi
 
 Instructions
 ============
+Install the [SMS Server Tools](http://smstools3.kekekasvi.com/).\
+In Debian-based Linux:
+```
+  sudo apt install smstools
+```
+
+
 Create the telegram bot according to the [Telegram Bot guide](https://core.telegram.org/bots#how-do-i-create-a-bot).
 
 Save the sms_handler.sh file from this repositotory to /usr/local/bin folder. Befor usage please set the correct Telegram API token and chat id from the previous step: token and chat_id variables:
