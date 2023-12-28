@@ -17,7 +17,7 @@ In Debian-based Linux:
 
 Create the telegram bot according to the [Telegram Bot guide](https://core.telegram.org/bots#how-do-i-create-a-bot).
 
-Save the sms_handler.sh file from this repositotory to /usr/local/bin folder. Befor usage please set the correct Telegram API token and chat id from the previous step: token and chat_id variables:
+Save the sms_handler.sh file from this repositotory to /usr/local/bin folder. Befor usage please set the correct Telegram API token and chat id from the previous step in the sms_handler.sh file: token and chat_id variables:
 ```
   token='TELEGRAM_API_TOKEN_ExAmPlE'
   chat_id=587412369
