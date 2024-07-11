@@ -1,0 +1,16 @@
+on:
+  pull_request:
+
+
+jobs:
+  CommentLiveApplyLink:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            Hey, you will be able to track the live progress of your atlantis apply using the following link:
+            https://bo.wix.com/infragod/#/atlantis/${{ github.repository }}/${{github.event.pull_request.number}}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]' # The user.login for temporary GitHub tokens
+          allow-repeats: false # This is the default
