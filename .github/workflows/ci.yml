@@ -1,0 +1,21 @@
+name: CI
+
+on: [pull_request] # This will trigger the workflow on push and pull request events
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2  # Checks-out your repository
+    
+    - name: Set up Node (for example, if you are using Node.js)
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14' # Set the node version
+    
+    - name: Install dependencies
+      run: npm install # Install the required dependencies
+    
+    - name: Run tests
+      run
