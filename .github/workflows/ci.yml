@@ -6,7 +6,7 @@ on: # This will trigger the workflow on push and pull request events
 
 
 jobs:
-  build:
+  dry_run:
     runs-on: ubuntu-latest
 
     steps:
