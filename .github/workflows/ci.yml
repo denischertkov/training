@@ -21,4 +21,4 @@ jobs:
       run: npm install # Install the required dependencies
 
     - name: Run tests
-      run: echo "WIN!"
+      run: echo"WIN!"
